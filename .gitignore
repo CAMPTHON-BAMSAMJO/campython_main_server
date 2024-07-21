@@ -45,3 +45,6 @@ out/
 
 ### .env
 .env
+
+### application.yml
+src/main/resources/application.yml
