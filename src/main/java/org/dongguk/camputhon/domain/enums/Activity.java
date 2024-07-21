@@ -1,0 +1,6 @@
+package org.dongguk.camputhon.domain.enums;
+
+public enum Activity {
+    SLEEP, ASSIGNMENT, EXERCISE, MEDITATION, MEAL,
+    CHAT, DATING, TEAMPLAY, READING, WATCHINGMOVIE, WATCHINGEXHIBITION, DEVELOPMENT, RESEARCH, WALK
+}
