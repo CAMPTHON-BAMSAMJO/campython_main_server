@@ -27,7 +27,7 @@ jobs:
 
       - name: Create application.yml
         run: |
-          echo "${{ secrets.APPLICATION_YML }}" > ./src/main/resources/application.yml
+          echo "${{ secrets.APPLICATION_YML }}" > ./src/main/java/org/dongguk/camputhon/resources/application.yml
         shell: bash
 
       # gradlew 실행 권한 부여
