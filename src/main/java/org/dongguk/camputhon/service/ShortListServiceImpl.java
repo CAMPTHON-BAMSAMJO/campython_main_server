@@ -12,6 +12,7 @@ import org.dongguk.camputhon.domain.Short;
 import org.dongguk.camputhon.domain.User;
 import org.dongguk.camputhon.domain.enums.Activity;
 import org.dongguk.camputhon.domain.enums.Location;
+import org.dongguk.camputhon.domain.enums.ShortType;
 import org.dongguk.camputhon.dto.GenerateVideoDTO;
 import org.dongguk.camputhon.dto.ShortListResponseDTO;
 import org.dongguk.camputhon.dto.ShortRequestDTO;
@@ -88,6 +89,49 @@ public class ShortListServiceImpl {
         shortform.updateUrl(s3Url);
 
         shortRepository.save(shortform);
+
+        ShortType type = ShortType.NONE;
+
+        Activity activity = userRepository.findMostCommonActivityByUserId(userId);
+        switch (activity){
+            case 연구:
+                type = ShortType.THINKING;
+                break;
+            case 개발:
+                type = ShortType.THINKING;
+                break;
+            case 독서:
+                type = ShortType.SUNSET;
+                break;
+            case 밥:
+                type = ShortType.SUNSHINE;
+                break;
+            case 과제:
+                type = ShortType.HARDWORK;
+                break;
+            case 팀플:
+                type = ShortType.HARDWORK;
+                break;
+            case 운동:
+                type = ShortType.SWEAT;
+                break;
+            case 수다:
+                type = ShortType.LAUGHTER;
+                break;
+            case 산책:
+                type = ShortType.LAUGHTER;
+                break;
+            case 영화관람:
+                type = ShortType.DREAMS;
+                break;
+            case 전시관람:
+                type = ShortType.DREAMS;
+                break;
+        }
+
+        user.updateType(type);
+
+        userRepository.save(user);
 
         return ShortResponseDTO.builder()
                 .s3Url(s3Url)
