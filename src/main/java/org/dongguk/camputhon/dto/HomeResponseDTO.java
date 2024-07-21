@@ -17,8 +17,8 @@ public class HomeResponseDTO {
         private String shortType;
         private String advantage;
         private String develop;
-        private List<Activity> activities;
-        private List<Location> locations;
+        private Activity mostActivity;
+        private Location mostLocation;
     }
 
     @Getter
