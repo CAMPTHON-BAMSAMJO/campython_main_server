@@ -25,6 +25,9 @@ public class User extends BaseEntity{
     @Column(unique = true, nullable = false, name="uuid")
     private String uuid;
 
+    @Column(name="typeImg")
+    private String typeImg;
+
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "VARCHAR(100) DEFAULT 'NONE'", name="shortType")
     private ShortType shortType;

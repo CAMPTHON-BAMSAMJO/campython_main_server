@@ -18,7 +18,7 @@ public enum ErrorStatus implements BaseErrorCode {
 
     // Ror test
     TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, 4001, "이거는 테스트"),
-    ;
+    NOT_FOUND_USER(HttpStatus.BAD_REQUEST, 40401, "존재하지 않는 유저입니다.");
 
 
     // ~~~ 관련 응답 ....

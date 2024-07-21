@@ -17,6 +17,6 @@ public class UserController {
     // uuid로 유저 등록 컨트롤러
     public ApiResponse<Long> createUser(@RequestBody UserUUIDRequestDTO request) {
         Long id = userService.createUser(request);
-        return ApiResponse.of(SuccessStatus._OK, id);
+        return ApiResponse.of(SuccessStatus._CREATE_USER_OK, id);
     }
 }

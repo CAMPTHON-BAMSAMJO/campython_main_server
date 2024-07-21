@@ -1,5 +1,6 @@
 package org.dongguk.camputhon.Repository;
 
+import org.dongguk.camputhon.domain.Short;
 import org.dongguk.camputhon.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

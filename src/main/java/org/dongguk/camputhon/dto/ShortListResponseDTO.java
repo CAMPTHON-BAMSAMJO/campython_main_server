@@ -3,12 +3,18 @@ package org.dongguk.camputhon.dto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.dongguk.camputhon.domain.enums.Activity;
+import org.dongguk.camputhon.domain.enums.Location;
+import org.dongguk.camputhon.domain.enums.ShortType;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ShortListResponseDTO {
 
     @Getter
+    @Setter
     @NoArgsConstructor
     public static class ShortList {
         private List<ShortDetail> shorts;
@@ -18,18 +24,19 @@ public class ShortListResponseDTO {
     @Builder
     public static class ShortDetail {
         private Long id;
+
         private String shortImg;
 
-        private String shortType;
+        private ShortType shortType;
 
         private String shortUrl;
 
-        private String activity;
+        private Activity activity;
 
-        private String location;
+        private Location location;
 
         private Long timeSpent;
 
-        private String createdAt;
+        private LocalDateTime createdAt;
     }
 }
