@@ -13,6 +13,6 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findById(Long id);
 
-    @Query("SELECT s.activity FROM Short s WHERE s.user.id = :userId GROUP BY s.activity ORDER BY COUNT(s.activity) DESC")
+    @Query("SELECT s.activity FROM Short s WHERE s.user.id = :userId GROUP BY s.activity ORDER BY COUNT(s.activity) DESC, s.activity ASC")
     Activity findMostCommonActivityByUserId(@Param("userId") Long userId);
 }
