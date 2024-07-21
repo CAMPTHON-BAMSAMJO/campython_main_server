@@ -38,11 +38,10 @@ public class User extends BaseEntity{
     @Column(name="develop")
     private String develop;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     @Column(nullable = false, columnDefinition = "VARCHAR(50) DEFAULT 'MALE'", name="sex")
     private Gender sex;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @Column(name="shorts")
     private List<Short> shorts;
 }

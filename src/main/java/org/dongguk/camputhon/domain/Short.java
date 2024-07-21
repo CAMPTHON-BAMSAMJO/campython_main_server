@@ -35,11 +35,11 @@ public class Short extends BaseEntity {
     @Column(nullable = false, name="endAt")
     private LocalDateTime endAt;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     @Column(nullable = false, columnDefinition = "VARCHAR(50) DEFAULT 'MALE'", name="activity")
     private Activity activity;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     @Column(nullable = false, columnDefinition = "VARCHAR(50) DEFAULT 'MALE'", name="location")
     private Location location;
 
