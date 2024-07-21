@@ -39,3 +39,9 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### gradle
+.gradle
+
+### .env
+.env
