@@ -60,9 +60,13 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}  # EC2 인스턴스의 사용자 이름
           key: ${{ secrets.EC2_SSH_KEY }}  # SSH 접속에 필요한 비밀 키
           script: |
+            echo "Docker login..."
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+            echo "Pulling Docker image..."
             docker pull ${{ secrets.DOCKER_USERNAME }}/shortdari:latest
+            echo "Stopping old container..."
             docker stop web || true
+            echo "Removing old container..."
             docker rm web || true
+            echo "Running new container..."
             docker run -d --name web -p 80:8080 ${{ secrets.DOCKER_USERNAME }}/shortdari:latest
-
