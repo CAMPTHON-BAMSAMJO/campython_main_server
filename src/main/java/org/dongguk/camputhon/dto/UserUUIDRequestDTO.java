@@ -1,8 +1,10 @@
 package org.dongguk.camputhon.dto;
 
-import lombok.Builder;
+import lombok.Getter;
+import org.dongguk.camputhon.domain.enums.Gender;
 
-@Builder
+@Getter
 public class UserUUIDRequestDTO {
     private String uuid;
+    private Gender sex;
 }

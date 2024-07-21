@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class ShortController {
 
     // 숏폼 생성 컨트롤러
-    public ApiResponse<String> createShort(@RequestParam UserUUIDRequestDTO uuid, @RequestBody ShortRequestDTO request) {
+    public ApiResponse<String> createShort(@RequestParam String uuid, @RequestBody ShortRequestDTO request) {
         return null;
     }
 
     // 저장함 조회 컨트롤러
-    public ApiResponse<ShortListResponseDTO> getShortList(@RequestParam UserUUIDRequestDTO uuid) {
+    public ApiResponse<ShortListResponseDTO.ShortList> getShortList(@RequestParam String uuid) {
         return null;
     }
 
     // 홈 조회 컨트롤러
-    public ApiResponse<HomeResponseDTO> getHomeData(@RequestParam UserUUIDRequestDTO uuid) {
+    public ApiResponse<HomeResponseDTO> getHomeData(@RequestParam String uuid) {
         return null;
     }
 }
