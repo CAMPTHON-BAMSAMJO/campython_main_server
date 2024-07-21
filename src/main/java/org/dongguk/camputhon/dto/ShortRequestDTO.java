@@ -10,11 +10,9 @@ import java.time.LocalTime;
 @Getter
 public class ShortRequestDTO {
     private Day day;
-    private String sex;
     private LocalTime startTime;
     private LocalTime endTime;
     private String activity;
     private String location;
     private String content;
-
 }

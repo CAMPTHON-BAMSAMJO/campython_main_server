@@ -61,7 +61,7 @@ public class ShortListServiceImpl {
                 .start_time(shortRequestDTO.getStartTime().toString())
                 .end_time(shortRequestDTO.getEndTime().toString())
                 .day(shortRequestDTO.getDay().toString())
-                .sex(shortRequestDTO.getSex())
+                .sex(user.getSex().toString().concat("자"))
                 .activity(shortRequestDTO.getActivity())
                 .location(shortRequestDTO.getLocation())
                 .content(shortRequestDTO.getContent())
