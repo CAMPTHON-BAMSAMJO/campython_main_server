@@ -33,7 +33,7 @@ public class ShortListServiceImpl {
                 .map(shortEntity -> ShortListResponseDTO.ShortDetail.builder()
                         .id(shortEntity.getId())
                         .shortImg(user.getTypeImg())
-                        .shortType(user.getShortType())
+                        .shortType(user.getShortType().getTypename())
                         .shortUrl(shortEntity.getShortUrl())
                         .activity(shortEntity.getActivity())
                         .location(shortEntity.getLocation())

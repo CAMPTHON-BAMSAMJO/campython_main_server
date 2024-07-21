@@ -27,7 +27,7 @@ public class ShortListResponseDTO {
 
         private String shortImg;
 
-        private ShortType shortType;
+        private String shortType;
 
         private String shortUrl;
 

@@ -28,7 +28,7 @@ public class User extends BaseEntity{
     @Column(name="typeImg")
     private String typeImg;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     @Column(columnDefinition = "VARCHAR(100) DEFAULT 'NONE'", name="shortType")
     private ShortType shortType;
 

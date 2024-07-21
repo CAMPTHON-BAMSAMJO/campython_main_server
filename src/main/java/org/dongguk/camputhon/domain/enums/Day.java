@@ -1,5 +1,5 @@
 package org.dongguk.camputhon.domain.enums;
 
-public enum Gender {
-    남, 여
+public enum Day {
+    월, 화, 수, 목, 금
 }
