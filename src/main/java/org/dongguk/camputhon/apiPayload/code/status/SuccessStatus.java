@@ -16,9 +16,10 @@ public enum SuccessStatus implements BaseCode {
     // 유저 관련
     _CREATE_USER_OK(HttpStatus.OK, 200, "유저 생성 성공"),
     _HOME_OK(HttpStatus.OK, 200, "홈 조회 성공"),
-    _SHORT_LIST_OK(HttpStatus.OK, 200, "숏폼 리스트 조회 성공");
+    _SHORT_LIST_OK(HttpStatus.OK, 200, "숏폼 리스트 조회 성공"),
 
-    // ~~~ 관련 응답
+    // 숏폼 관련 응답
+    _CREATE_SHORT_OK(HttpStatus.OK, 200, "숏폼 생성 성공");
 
     private final HttpStatus httpStatus;
     private final int code;

@@ -16,8 +16,10 @@ public class ShortController {
     private final HomeServiceImpl homeService;
 
     // 숏폼 생성 컨트롤러
-    public ApiResponse<String> createShort(@RequestParam("userId") Long userId, @RequestBody ShortRequestDTO request) {
-        return null;
+    @PostMapping("/shorts")
+    public ApiResponse<ShortResponseDTO> createShort(@RequestParam("userId") Long userId, @RequestBody ShortRequestDTO request) {
+        ShortResponseDTO shortResponseDTO = shortListService.createShort(userId, request);
+        return ApiResponse.of(SuccessStatus._CREATE_SHORT_OK, shortResponseDTO);
     }
 
     // 저장함 조회 컨트롤러

@@ -8,13 +8,13 @@ import java.time.LocalTime;
 
 @Builder
 @Getter
-public class ShortRequestDTO {
-    private Day day;
+public class GenerateVideoDTO {
+    private int id;
+    private String day;
     private String sex;
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private String start_time;
+    private String end_time;
     private String activity;
     private String location;
     private String content;
-
 }

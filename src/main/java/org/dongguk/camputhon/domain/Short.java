@@ -7,6 +7,7 @@ import lombok.*;
 import jakarta.persistence.*;
 import org.dongguk.camputhon.domain.enums.Location;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Entity
@@ -29,21 +30,25 @@ public class Short extends BaseEntity {
     @Column(name="shortUrl")
     private String shortUrl;
 
-    @Column(nullable = false, name="startAt")
-    private LocalDateTime startAt;
+    @Column(name="startAt")
+    private LocalTime startAt;
 
-    @Column(nullable = false, name="endAt")
-    private LocalDateTime endAt;
+    @Column(name="endAt")
+    private LocalTime endAt;
 
     @Enumerated(EnumType.ORDINAL)
-    @Column(nullable = false, columnDefinition = "VARCHAR(50) DEFAULT 'MALE'", name="activity")
+    @Column(columnDefinition = "VARCHAR(50) DEFAULT 'MALE'", name="activity")
     private Activity activity;
 
     @Enumerated(EnumType.ORDINAL)
-    @Column(nullable = false, columnDefinition = "VARCHAR(50) DEFAULT 'MALE'", name="location")
+    @Column(columnDefinition = "VARCHAR(50) DEFAULT 'MALE'", name="location")
     private Location location;
 
     @Column(name="content")
     private String content;
 
+
+    public void updateUrl(String shortUrl) {
+        this.shortUrl = shortUrl;
+    }
 }
