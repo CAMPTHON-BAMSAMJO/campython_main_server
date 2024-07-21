@@ -34,7 +34,7 @@ public class HomeServiceImpl {
 
         AtomicInteger idGenerator = new AtomicInteger(1); // ID 생성기 초기화
 
-        // 활동별 시간 집계
+        // 활동별 시간 집계, Enum 선언 순서대로 정렬
         List<HomeResponseDTO.Activity> activities = shortList.stream()
                 .collect(Collectors.groupingBy(
                         Short::getActivity,
@@ -46,10 +46,9 @@ public class HomeServiceImpl {
                         .activity(entry.getKey().name())
                         .timeSpent(entry.getValue())
                         .build())
-                .sorted(Comparator.comparingLong(HomeResponseDTO.Activity::getTimeSpent))
                 .collect(Collectors.toList());
 
-        // 장소별 시간 집계
+        // 장소별 시간 집계, Enum 선언 순서대로 정렬
         List<HomeResponseDTO.Location> locations = shortList.stream()
                 .collect(Collectors.groupingBy(
                         Short::getLocation,
@@ -61,7 +60,6 @@ public class HomeServiceImpl {
                         .location(entry.getKey().name())
                         .timeSpent(entry.getValue())
                         .build())
-                .sorted(Comparator.comparingLong(HomeResponseDTO.Location::getTimeSpent))
                 .collect(Collectors.toList());
 
         // Home 객체 생성 및 반환
