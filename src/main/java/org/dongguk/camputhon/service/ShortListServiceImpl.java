@@ -92,7 +92,8 @@ public class ShortListServiceImpl {
 
         ShortType type = ShortType.NONE;
 
-        Activity activity = userRepository.findMostCommonActivityByUserId(userId);
+        List<Activity> activities = userRepository.findMostCommonActivitiesByUserId(userId);
+        Activity activity = activities.get(0);
         switch (activity){
             case 연구:
                 type = ShortType.THINKING;

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -14,5 +15,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findById(Long id);
 
     @Query("SELECT s.activity FROM Short s WHERE s.user.id = :userId GROUP BY s.activity ORDER BY COUNT(s.activity) DESC, s.activity ASC")
-    Activity findMostCommonActivityByUserId(@Param("userId") Long userId);
+    List<Activity> findMostCommonActivitiesByUserId(@Param("userId") Long userId);
+
 }
