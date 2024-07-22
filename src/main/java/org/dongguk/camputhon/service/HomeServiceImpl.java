@@ -25,9 +25,9 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class HomeServiceImpl {
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    ShortRepository shortRepository;
+    private final ShortRepository shortRepository;
 
     public HomeResponseDTO.Home getHomData(Long userId) {
 
